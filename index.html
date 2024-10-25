@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drawing Application</title>
+</head>
+<br>
+<body>
+<h1>Drawing Application</h1>
+<label>
+<input type="radio" name="shape" value="line" checked> Line
+</label>
+<label>
+<br>
+<input type="radio" name="shape" value="rectangle"> Rectangle
+</label>
+<label>
+<br>
+<input type="radio" name="shape" value="circle"> Circle
+</label>
+<label for="color">Choose Color:</label>
+<input type="color" id="color" value="#f63daf">
+<button id="clearCanvas">Clear Canvas</button>
+
+<canvas id="drawingCanvas" width="500" height="500" style="border:1px solid #f63daf;"></canvas>
+
+<script src="app.js"></script>
+</body>
+</html>
