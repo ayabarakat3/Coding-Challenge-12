@@ -16,8 +16,6 @@ return { x: mouseX, y: mouseY };}
 
 canvas.addEventListener('mousedown', function(event) {
 isDrawing = true; 
-
-ctx.clearRect(0, 0, canvas.width, canvas.height);
 // Code shows that if infact the canvas is being drawn on, it should proceed with the rest of the code instructions. 
 let pos = getMousePosition(event); 
 startX = pos.x; 
@@ -26,6 +24,7 @@ startY = pos.y;});
 canvas.addEventListener('mousemove', function(event) {
 if (isDrawing) { 
 let pos = getMousePosition(event); 
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 // Code set to get the position of the mouse and only draw when the canvas is meant to be drawn on.
 
 ctx.strokeStyle = document.getElementById('color').value; 
