@@ -1,6 +1,7 @@
 // Configure the JavaScript for Drawing Context
 let canvas = document.getElementById('drawingCanvas');
 let ctx = canvas.getContext('2d');
+let shapes = []
 // Code meant to show where exactly the canvas is. 
 let isDrawing = false;
 // Code is meant to determine if the canvas is being drawn on or not.
@@ -25,8 +26,6 @@ if (isDrawing) {
 let pos = getMousePosition(event); 
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 // Code set to get the position of the mouse and only draw when the canvas is meant to be drawn on.
-
-
 
 ctx.strokeStyle = document.getElementById('color').value; 
 // Drawing color set. I set it as dark pink as it would contrast and stand out with the light pink canvas. 
