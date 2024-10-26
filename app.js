@@ -1,7 +1,7 @@
 // Configure the JavaScript for Drawing Context
 let canvas = document.getElementById('drawingCanvas');
 let ctx = canvas.getContext('2d');
-let shapes = []
+
 // Code meant to show where exactly the canvas is. 
 let isDrawing = false;
 // Code is meant to determine if the canvas is being drawn on or not.
