@@ -31,6 +31,7 @@ ctx.strokeStyle = '#C71585';
 let shape = document.querySelector('input[name="shape"]:checked').value;
 // Code determines what shape is intended to be used. 
 
+
 if (shape === 'line') {
 ctx.beginPath(); 
 ctx.moveTo(startX, startY); 
