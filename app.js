@@ -1,4 +1,4 @@
-// Task 2: Configure the JavaScript for Drawing Context
+// Configure the JavaScript for Drawing Context
 let canvas = document.getElementById('drawingCanvas');
 let ctx = canvas.getContext('2d');
 // Code meant to show where exactly the canvas is. 
