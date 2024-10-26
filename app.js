@@ -31,32 +31,33 @@ ctx.strokeStyle = '#C71585';
 let shape = document.querySelector('input[name="shape"]:checked').value;
 // Code determines what shape is intended to be used. 
 
-
+// The code for drawing the shapes is what's left now, as the layout of the webpage itself is complete. 
 if (shape === 'line') {
 ctx.beginPath(); 
 ctx.moveTo(startX, startY); 
-// 
 ctx.lineTo(pos.x, pos.y); 
-//
 ctx.stroke(); 
+// Code meant to show how to start the line at the chosen point and end it at the chosen point. 
 // Code meant to reveal the line drawn on the canvas. 
 } else if (shape === 'rectangle') {
 ctx.beginPath(); 
-//
 ctx.strokeRect(startX, startY, pos.x - startX, pos.y - startY); 
-// 
+// Code meant to show how to start the rectangle shape at the chosen point and end it at the chosen point. 
 } else if (shape === 'circle') {
 let radius = Math.sqrt((pos.x - startX) ** 2 + (pos.y - startY) ** 2); 
 ctx.beginPath(); 
-// 
 ctx.arc(startX, startY, radius, 0, Math.PI * 2); 
-// 
-ctx.stroke();}}}); 
-// Code meant to reveal the circle on the canvas. 
-
+ctx.stroke();
+}}}); 
+/* Code meant to show how to start the circle at the chosen point and end it at the chosen point, 
+keeping the radius and how the starting points differ for circle shapes. 
+Code meant to reveal the circle on the canvas. */
 canvas.addEventListener('mouseup', function() {
 isDrawing = false; });
 // Code is intended to stop drawing when the mouse stops drawing.
 document.getElementById('clearCanvas').addEventListener('click', function() {
 ctx.clearRect(0, 0, canvas.width, canvas.height);});
-// COde meant to clear entire canvas when asked to do so. 
+/* Code meant to clear entire canvas when asked to do so. 
+Code has been tested and all shapes have been tested at this point. 
+Code functions as intended to.
+Coding challenge is now complete. */
