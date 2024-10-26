@@ -56,8 +56,9 @@ Code meant to reveal the circle on the canvas. */
 canvas.addEventListener('mouseup', function() {
 isDrawing = false; });
 // Code is intended to stop drawing when the mouse stops drawing.
-document.getElementById('clearCanvas').addEventListener('click', function(){});
+document.getElementById('clearCanvas').addEventListener('click', function(){
 ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
 /* Code meant to clear entire canvas when asked to do so. 
 Code has been tested and all shapes have been tested at this point. 
 Code functions as intended to.
