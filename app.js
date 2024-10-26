@@ -11,11 +11,11 @@ let canvasRect = canvas.getBoundingClientRect();
 let mouseX = event.clientX - canvasRect.left; 
 let mouseY = event.clientY - canvasRect.top;  
 return { x: mouseX, y: mouseY };}
-// Code determines the position of the mouse on the canvas and in the last line of code, return the postion of the mouse.
+// Code determines the position of the mouse on the canvas and in the last line of code, returns the postion of the mouse.
 
 canvas.addEventListener('mousedown', function(event) {
 isDrawing = true; 
-// Code shows that if infact the canvas is being drawn on, it should proceed.
+// Code shows that if infact the canvas is being drawn on, it should proceed with the rest of the code instructions. 
 let pos = getMousePosition(event); 
 startX = pos.x; 
 startY = pos.y;});
