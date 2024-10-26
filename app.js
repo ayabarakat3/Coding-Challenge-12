@@ -24,8 +24,8 @@ canvas.addEventListener('mousemove', function(event) {
 if (isDrawing) { 
 let pos = getMousePosition(event); 
 // Code set to get the position of the mouse and only draw when the canvas is meant to be drawn on.
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-// Code meant to show how the canvas should be cleared when instructed. 
+
+
 
 ctx.strokeStyle = document.getElementById('color').value; 
 // Drawing color set. I set it as dark pink as it would contrast and stand out with the light pink canvas. 
