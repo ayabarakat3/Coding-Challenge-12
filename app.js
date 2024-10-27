@@ -1,6 +1,6 @@
 // Configure the JavaScript for Drawing Context
-let canvas = document.getElementById('drawingCanvas');
-let ctx = canvas.getContext('2d');
+const canvas = document.getElementById('drawing-canvas');
+const ctx = canvas.getContext('2d');
 
 // Code meant to show where exactly the canvas is. 
 let isDrawing = false;
@@ -14,17 +14,21 @@ let mouseY = event.clientY - canvasRect.top;
 return { x: mouseX, y: mouseY };}
 // Code determines the position of the mouse on the canvas and in the last line of code, returns the postion of the mouse.
 
-canvas.addEventListener('mousedown', function(event) {
-isDrawing = true; 
+
+canvas.addEventListener('mousedown', (e) => {
+isDrawing = true;
+console.log('Mouse down at:', e.offsetX, e.offsetY);});
 // Code shows that if infact the canvas is being drawn on, it should proceed with the rest of the code instructions. 
-let pos = getMousePosition(event); 
-startX = pos.x; 
-startY = pos.y;});
+
 // Code set to get the position of the mouse and set the starting postions of the x and y coordinates. 
-canvas.addEventListener('mousemove', function(event) {
-if (isDrawing) { 
-let pos = getMousePosition(event); 
-ctx.clearRect(0, 0, canvas.width, canvas.height);
+canvas.addEventListener('mousemove', (e) => {
+    if (!isDrawing) return; // Stop if the mouse is not pressed
+    console.log('Mouse moving at:', e.offsetX, e.offsetY);
+    // Example: Draw a small dot at the current mouse position
+    ctx.beginPath();
+    ctx.arc(e.offsetX, e.offsetY, 2, 0, Math.PI * 2);
+    ctx.fill();
+    });
 // Code set to get the position of the mouse and only draw when the canvas is meant to be drawn on.
 
 ctx.strokeStyle = document.getElementById('color').value; 
@@ -49,12 +53,14 @@ let radius = Math.sqrt((pos.x - startX) ** 2 + (pos.y - startY) ** 2);
 ctx.beginPath(); 
 ctx.arc(startX, startY, radius, 0, Math.PI * 2); 
 ctx.stroke();
-}}}); 
+}; 
 /* Code meant to show how to start the circle at the chosen point and end it at the chosen point, 
 keeping the radius and how the starting points differ for circle shapes. 
 Code meant to reveal the circle on the canvas. */
-canvas.addEventListener('mouseup', function() {
-isDrawing = false; });
+canvas.addEventListener('mouseup', () => {
+    isDrawing = false;
+    console.log('Mouse released');
+    });
 // Code is intended to stop drawing when the mouse stops drawing.
 document.getElementById('clearCanvas').addEventListener('click', function(){
 ctx.clearRect(0, 0, canvas.width, canvas.height);
